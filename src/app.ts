@@ -19,6 +19,9 @@ app.use(cors({
   credentials: true,
   maxAge: 86400 // 24 hours
 }));
+
+app.options('*', cors()); // Handles all OPTIONS requests
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
