@@ -2,12 +2,20 @@ import express from 'express';
 import http from 'http';
 import { Server } from 'socket.io';
 import { sequelize } from './config/dbConfig';
+import cors from 'cors';
 import app from './app';
 
 const PORT = process.env.PORT || 3000;
 
 // Create an HTTP server
 const server = http.createServer(app);
+app.use(cors({
+  origin: process.env.ALLOWED_ORIGINS || '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  credentials: true,
+  maxAge: 86400 // 24 hours
+}));
 
 // Initialize Socket.IO
 const io = new Server(server, {
