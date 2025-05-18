@@ -1,6 +1,6 @@
 {
   "name": "EchoMateLite-Backend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Backend for EchoMateLite, a lightweight social media platform.",
   "main": "src/server.ts",
   "scripts": {

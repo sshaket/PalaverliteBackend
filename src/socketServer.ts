@@ -9,19 +9,20 @@ const PORT = process.env.PORT || 3000;
 
 // Create an HTTP server
 const server = http.createServer(app);
-app.use(cors({
-  origin: process.env.ALLOWED_ORIGINS || '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  credentials: true,
-  maxAge: 86400 // 24 hours
-}));
+// app.use(cors({
+//   origin: process.env.ALLOWED_ORIGINS || '*',
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+//   credentials: true,
+//   maxAge: 86400 // 24 hours
+// }));
 
 // Initialize Socket.IO
 const io = new Server(server, {
     cors: {
         origin: '*',
         methods: ['GET', 'POST'],
+        credentials: true
     },
 });
 
