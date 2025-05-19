@@ -8,7 +8,7 @@ Echo Mate Lite is a lightweight social media platform that allows users to creat
 - Profile Management: Users can create and edit profiles, including profile pictures.
 - Post Management: Users can create posts, view feeds, like, and comment on posts.
 - Basic Security: Encrypted connections (HTTPS) and password hashing for user authentication.
-
+  
 ## Technologies Used
 - Node.js v23.7.0
 - Express.js
